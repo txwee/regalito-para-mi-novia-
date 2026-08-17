@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi amor 🌷</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Georgia,"Times New Roman",serif;
+    background:#f8f5fb;
+    color:#45334f;
+    overflow-x:hidden;
+}
+
+/* =========================
+   INICIO
+========================= */
+
+.inicio{
+    height:100vh;
+    height:100svh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    padding:25px;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #ffffff 0%,
+            #f7f1fa 45%,
+            #e5d7ec 100%
+        );
+
+    position:relative;
+    overflow:hidden;
+}
+
+/* luces decorativas */
+
+.inicio::before{
+    content:"";
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    background:#c9a9d9;
+
+    opacity:.16;
+
+    border-radius:50%;
+
+    filter:blur(70px);
+
+    top:-150px;
+    left:-120px;
+}
+
+.inicio::after{
+    content:"";
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    background:#8b5a9e;
+
+    opacity:.10;
+
+    border-radius:50%;
+
+    filter:blur(70px);
+
+    bottom:-150px;
+    right:-100px;
+}
+
+.contenido{
+    position:relative;
+    z-index:2;
+
+    animation:aparecer 1.8s ease;
+}
+
+.corazon{
+    font-size:58px;
+
+    color:#80519a;
+
+    animation:latido 3s infinite ease-in-out;
+
+    margin-bottom:18px;
+}
+
+.pequeno{
+    font-family:Arial,sans-serif;
+
+    font-size:10px;
+
+    letter-spacing:4px;
+
+    color:#8b7194;
+
+    margin:15px;
+}
+
+h1{
+    font-size:clamp(50px,14vw,82px);
+
+    font-weight:normal;
+
+    line-height:.92;
+
+    color:#49324f;
+}
+
+h1 span{
+    color:#81529a;
+}
+
+.intro{
+    margin:28px 0;
+
+    font-size:17px;
+
+    color:#725b7c;
+}
+
+/* BOTÓN */
+
+button{
+    border:1px solid #9871aa;
+
+    border-radius:40px;
+
+    padding:16px 32px;
+
+    background:#77508c;
+
+    color:white;
+
+    font-family:Arial,sans-serif;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 30px rgba(90,50,110,.20);
+
+    transition:.35s ease;
+}
+
+button:hover{
+    background:#684279;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(90,50,110,.30);
+}
+
+button:active{
+    transform:scale(.96);
+}
+
+
+/* =========================
+   REGALO
+========================= */
+
+.regalo{
+    min-height:100vh;
+
+    padding-bottom:50px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8f4fa 0%,
+            #eee3f3 45%,
+            #e1d1e9 100%
+        );
+
+    position:relative;
+}
+
+.oculto{
+    display:none;
+}
+
+
+/* =========================
+   JARDÍN
+========================= */
+
+.jardin{
+    height:410px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    padding-top:50px;
+
+    position:relative;
+}
+
+.jardin::before{
+    content:"✦     ✧       ✦     ✧";
+
+    position:absolute;
+
+    top:55px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#9a73a8;
+
+    opacity:.45;
+
+    font-size:15px;
+
+    letter-spacing:20px;
+}
+
+.jardin p{
+    margin-bottom:25px;
+
+    font-size:18px;
+
+    color:#71537d;
+
+    font-style:italic;
+}
+
+
+/* =========================
+   TULIPANES
+========================= */
+
+.tulipanes{
+    height:285px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+    gap:4px;
+}
+
+.tulipan{
+    width:78px;
+
+    height:270px;
+
+    position:relative;
+
+    animation:
+        crecer 1.6s ease forwards,
+        balanceo 5s ease-in-out 1.8s infinite;
+
+    transform:scaleY(0);
+
+    transform-origin:bottom;
+}
+
+.tulipan:nth-child(2){
+    animation-delay:.25s,2s;
+}
+
+.tulipan:nth-child(3){
+    animation-delay:.5s,2.2s;
+}
+
+.tulipan:nth-child(4){
+    animation-delay:.75s,2.4s;
+}
+
+
+/* FLORES */
+
+.flor{
+    position:absolute;
+
+    top:0;
+    left:5px;
+
+    width:68px;
+    height:75px;
+}
+
+.flor span{
+    position:absolute;
+
+    width:39px;
+    height:64px;
+
+    border-radius:55% 55% 45% 45%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #cda5dc,
+            #79508e
+        );
+
+    box-shadow:
+        inset -5px -6px 10px rgba(65,35,80,.12);
+}
+
+.flor span:nth-child(1){
+    left:0;
+    top:8px;
+
+    transform:rotate(-25deg);
+}
+
+.flor span:nth-child(2){
+    left:15px;
+    top:0;
+
+    z-index:2;
+}
+
+.flor span:nth-child(3){
+    left:30px;
+    top:8px;
+
+    transform:rotate(25deg);
+}
+
+.flor span:nth-child(4){
+    left:15px;
+    top:12px;
+
+    z-index:3;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dfbce9,
+            #9563a8
+        );
+}
+
+
+/* TALLOS */
+
+.tallo{
+    position:absolute;
+
+    width:7px;
+
+    height:185px;
+
+    left:35px;
+
+    top:55px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #52785d,
+            #789b78
+        );
+}
+
+
+/* HOJAS */
+
+.hoja{
+    position:absolute;
+
+    width:58px;
+    height:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #719676,
+            #496e54
+        );
+
+    border-radius:100% 0 100% 0;
+
+    top:150px;
+}
+
+.hoja1{
+    left:0;
+
+    transform:rotate(150deg);
+}
+
+.hoja2{
+    left:34px;
+
+    transform:rotate(25deg);
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.carta{
+    width:calc(100% - 26px);
+
+    max-width:670px;
+
+    margin:30px auto;
+
+    padding:42px 28px;
+
+    background:
+        rgba(255,253,255,.92);
+
+    border:1px solid rgba(120,80,140,.12);
+
+    border-radius:4px;
+
+    box-shadow:
+        0 20px 60px rgba(65,40,80,.15);
+
+    text-align:center;
+
+    animation:subir 1.5s ease;
+
+    position:relative;
+}
+
+/* borde decorativo */
+
+.carta::before{
+    content:"";
+
+    position:absolute;
+
+    inset:10px;
+
+    border:1px solid rgba(120,80,140,.12);
+
+    pointer-events:none;
+}
+
+.adorno{
+    font-size:36px;
+
+    color:#80519a;
+
+    margin-bottom:12px;
+}
+
+.carta small{
+    font-family:Arial,sans-serif;
+
+    letter-spacing:4px;
+
+    font-size:9px;
+
+    color:#91769b;
+}
+
+h2{
+    font-size:clamp(31px,8vw,44px);
+
+    font-weight:normal;
+
+    line-height:1.15;
+
+    color:#49334f;
+
+    margin:16px 0 28px;
+}
+
+.carta p{
+    font-family:Arial,sans-serif;
+
+    font-size:15px;
+
+    line-height:1.85;
+
+    color:#5d4a63;
+
+    margin-bottom:21px;
+}
+
+
+/* FRASE */
+
+.frase{
+    margin:38px 0;
+
+    padding:30px 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5edf8,
+            #e9d9ef
+        );
+
+    border-top:1px solid #c9afd3;
+
+    border-bottom:1px solid #c9afd3;
+}
+
+.frase p{
+    font-family:Georgia,serif;
+
+    font-style:italic;
+
+    margin-bottom:10px;
+
+    color:#80638b;
+}
+
+.frase strong{
+    display:block;
+
+    font-family:Georgia,serif;
+
+    font-size:clamp(22px,6vw,30px);
+
+    line-height:1.4;
+
+    color:#704184;
+}
+
+.final{
+    font-family:Georgia,serif!important;
+
+    font-size:21px!important;
+
+    color:#704184!important;
+
+    margin-top:35px;
+}
+
+.carta b{
+    color:#80519a;
+
+    font-family:Georgia,serif;
+
+    font-size:18px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+    color:#806a88;
+
+    padding:20px;
+}
+
+
+/* =========================
+   CORAZONES
+========================= */
+
+.corazon-flotante{
+    position:fixed;
+
+    bottom:-30px;
+
+    color:#9670a4;
+
+    pointer-events:none;
+
+    z-index:10;
+
+    animation:flotar 7s linear forwards;
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes subir{
+
+    from{
+        opacity:0;
+        transform:translateY(45px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes latido{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.12);
+    }
+}
+
+@keyframes crecer{
+
+    0%{
+        opacity:0;
+        transform:scaleY(0) translateY(80px);
+    }
+
+    100%{
+        opacity:1;
+        transform:scaleY(1) translateY(0);
+    }
+}
+
+@keyframes balanceo{
+
+    0%,100%{
+        rotate:-2deg;
+    }
+
+    50%{
+        rotate:2deg;
+    }
+}
+
+@keyframes flotar{
+
+    from{
+        transform:translateY(0) rotate(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.75;
+    }
+
+    to{
+        transform:translateY(-110vh) rotate(35deg);
+        opacity:0;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:600px){
+
+    .tulipanes{
+        transform:scale(.82);
+    }
+
+    .carta{
+        padding:38px 23px;
+    }
+
+    .jardin{
+        height:370px;
+    }
+}
+
+@media(max-width:380px){
+
+    .tulipanes{
+        transform:scale(.70);
+    }
+
+    .jardin{
+        height:340px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="inicio" id="inicio">
+<div class="contenido">
+<div class="corazon">♡</div>
+<div class="pequeno">PARA ALGUIEN MUY ESPECIAL</div>
+
+<h1>Para mi<br><span>amor</span> ♡</h1>
+
+<p class="intro">Hice algo pequeñito para ti...</p>
+
+<button onclick="abrir()">Abrir mi regalo ♡</button>
+</div>
+</section>
+
+
+<section class="regalo oculto" id="regalo">
+
+<div class="jardin">
+<p>Para ti, mi niña... 🌷</p>
+
+<div class="tulipanes">
+
+<div class="tulipan">
+<div class="flor"><span></span><span></span><span></span><span></span></div>
+<div class="tallo"></div>
+<div class="hoja hoja1"></div>
+<div class="hoja hoja2"></div>
+</div>
+
+<div class="tulipan">
+<div class="flor"><span></span><span></span><span></span><span></span></div>
+<div class="tallo"></div>
+<div class="hoja hoja1"></div>
+<div class="hoja hoja2"></div>
+</div>
+
+<div class="tulipan">
+<div class="flor"><span></span><span></span><span></span><span></span></div>
+<div class="tallo"></div>
+<div class="hoja hoja1"></div>
+<div class="hoja hoja2"></div>
+</div>
+
+<div class="tulipan">
+<div class="flor"><span></span><span></span><span></span><span></span></div>
+<div class="tallo"></div>
+<div class="hoja hoja1"></div>
+<div class="hoja hoja2"></div>
+</div>
+
+</div>
+</div>
+
+
+<div class="carta">
+
+<div class="adorno">♡</div>
+
+<small>PARA TI, MI NIÑA</small>
+
+<h2>Feliz cumpleaños,<br>mi amor ♡</h2>
+
+<p>
+Hoy es un día muy especial porque es el día en que nació una de las
+personas que más quiero en este mundo. Y aunque quizá estas palabras
+no sean suficientes para explicar todo lo que siento por ti, quería
+hacer algo especial para recordarte lo importante que eres para mí.
+</p>
+
+<p>
+Primero que nada, quiero desearte un muy feliz cumpleaños. Espero que
+este nuevo año de tu vida llegue lleno de momentos bonitos, nuevas
+experiencias, sueños cumplidos y muchísimas razones para sonreír.
+Deseo de corazón que puedas disfrutar cada una de las cosas bonitas
+que la vida tenga preparadas para ti.
+</p>
+
+<p>
+También quiero que sepas que estoy muy orgullosa de ti. De todo lo que
+has logrado, de todo lo que has aprendido y, especialmente, de la
+persona que eres. Sé que no todos los días son fáciles y que algunas
+veces puedes sentir que las cosas pesan demasiado, pero nunca quiero
+que olvides que no tienes que poder con todo tú sola.
+</p>
+
+<p>
+Quiero estar para escucharte cuando necesites hablar, para acompañarte
+cuando tengas un día difícil, para celebrar contigo cuando algo te
+salga bien y para recordarte, cuando tú misma lo olvides, todas las
+cosas bonitas que hay en ti.
+</p>
+
+<div class="frase">
+<p>Porque tú eres mi...</p>
+<strong>"porque en cualquier momento"</strong>
+</div>
+
+<p>
+Y quizá te preguntes qué quiero decir con eso.
+</p>
+
+<p>
+Eres mi "porque en cualquier momento" porque puedo estar haciendo
+cualquier cosa y, de repente, apareces en mis pensamientos.
+</p>
+
+<p>
+Porque en cualquier momento puedo encontrar algo que me recuerde a ti
+y automáticamente querer contártelo.
+</p>
+
+<p>
+Porque en cualquier momento puede pasarme algo bonito y pensar:
+"ojalá pudiera compartir esto con ella".
+</p>
+
+<p>
+Porque en cualquier momento puedo estar teniendo un día cualquiera,
+sin que esté pasando nada extraordinario, y aun así encontrar un
+motivo para sonreír simplemente porque existes en mi vida.
+</p>
+
+<p>
+Eres ese pensamiento bonito que llega sin avisar. Ese pequeño detalle
+que puede cambiar completamente un momento normal. Esa persona que
+puede convertir una conversación cualquiera en uno de mis recuerdos
+favoritos.
+</p>
+
+<p>
+Y creo que eso es lo que significa para mí tenerte. No solamente estar
+en los momentos importantes, sino también estar presente en esos
+pequeños instantes que nadie más nota.
+</p>
+
+<p>
+Quiero que cuando tengas un día en el que dudes de ti misma recuerdes
+que hay alguien que cree muchísimo en ti. Que cuando sientas que no
+puedes más, recuerdes que no tienes que enfrentarlo todo sola. Y que
+cuando consigas algo que te haga feliz, tengas la certeza de que voy a
+alegrarme contigo.
+</p>
+
+<p>
+No quiero prometerte que todos los días serán perfectos, porque sé que
+la vida no funciona así. Pero sí quiero prometerte que mientras pueda,
+voy a intentar estar presente, escucharte, apoyarte y darte un poquito
+de tranquilidad cuando lo necesites.
+</p>
+
+<p>
+Quiero seguir conociendo todas esas pequeñas partes de ti que quizá
+todavía no conozco. Seguir escuchando tus historias, tus pensamientos,
+tus ideas, tus sueños y hasta esas cosas que quizá para ti parezcan
+insignificantes, pero que para mí terminan siendo importantes porque
+vienen de ti.
+</p>
+
+<p>
+Y espero que este cumpleaños sea solamente el comienzo de otro año
+lleno de recuerdos que algún día podamos mirar hacia atrás y decir:
+"¿te acuerdas de esto?"
+</p>
+
+<p>
+Gracias por dejarme formar parte de tu vida. Gracias por cada
+conversación, cada momento, cada risa y cada pequeño detalle que has
+compartido conmigo.
+</p>
+
+<p>
+Gracias simplemente por ser tú. No necesitas convertirte en alguien
+diferente para merecer cosas bonitas. Espero que nunca olvides que
+eres una persona valiosa, especial y digna de todo aquello que te haga
+feliz.
+</p>
+
+<p>
+En este nuevo año de tu vida deseo que puedas acercarte cada vez más
+a aquello que quieres, que tengas fuerza para superar lo difícil,
+paciencia contigo misma y muchas oportunidades para disfrutar de las
+cosas que amas.
+</p>
+
+<p>
+Y si algún día necesitas un motivo para seguir sonriendo, espero poder
+ser uno de ellos.
+</p>
+
+<p class="final">
+Feliz cumpleaños, mi amor. ♡<br>
+Que este nuevo capítulo de tu vida sea precioso.
+</p>
+
+<p>
+Con muchísimo cariño,<br>
+<b>tu persona ♡</b>
+</p>
+
+</footer>
+
+</section>
+
+
+<script>
+function abrir(){
+
+document.getElementById("inicio").style.display="none";
+document.getElementById("regalo").classList.remove("oculto");
+
+window.scrollTo(0,0);
+
+setInterval(function(){
+
+let c=document.createElement("div");
+
+c.className="corazon-flotante";
+c.innerHTML="♡";
+
+c.style.left=Math.random()*100+"vw";
+c.style.fontSize=(12+Math.random()*15)+"px";
+
+document.body.appendChild(c);
+
+setTimeout(function(){
+c.remove();
+},6000);
+
+},900);
+
+}
+</script>
+
+</body>
+</html>
